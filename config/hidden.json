@@ -1,0 +1,2090 @@
+{
+    "extensions": [
+        {
+            "type": "component",
+            "element": "com_actionlogs",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_admin",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_ajax",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_associations",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_banners",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_cache",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_categories",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_checkin",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_config",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_contact",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_content",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_contenthistory",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_cpanel",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_fields",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_finder",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_installer",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_joomlaupdate",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_languages",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_login",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_mailto",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_media",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_menus",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_messages",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_modules",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_newsfeeds",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_plugins",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_postinstall",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_privacy",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_redirect",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_search",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_tags",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_templates",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_users",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_wrapper",
+            "folder": ""
+        },
+        {
+            "type": "file",
+            "element": "joomla",
+            "folder": ""
+        },
+        {
+            "type": "language",
+            "element": "en-GB",
+            "folder": ""
+        },
+        {
+            "type": "language",
+            "element": "en-GB",
+            "folder": ""
+        },
+        {
+            "type": "library",
+            "element": "fof",
+            "folder": ""
+        },
+        {
+            "type": "library",
+            "element": "idna_convert",
+            "folder": ""
+        },
+        {
+            "type": "library",
+            "element": "joomla",
+            "folder": ""
+        },
+        {
+            "type": "library",
+            "element": "phpass",
+            "folder": ""
+        },
+        {
+            "type": "library",
+            "element": "phputf8",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_articles_archive",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_articles_categories",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_articles_category",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_articles_latest",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_articles_news",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_articles_popular",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_banners",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_breadcrumbs",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_custom",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_custom",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_feed",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_feed",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_finder",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_footer",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_languages",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_latest",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_latestactions",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_logged",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_login",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_login",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_menu",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_menu",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_multilangstatus",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_popular",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_privacy_dashboard",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_quickicon",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_random_image",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_related_items",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_sampledata",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_search",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_stats",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_stats_admin",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_status",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_submenu",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_syndicate",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_tags_popular",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_tags_similar",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_title",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_toolbar",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_users_latest",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_version",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_whosonline",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_wrapper",
+            "folder": ""
+        },
+        {
+            "type": "package",
+            "element": "pkg_en-GB",
+            "folder": ""
+        },
+        {
+            "type": "plugin",
+            "element": "actionlogs",
+            "folder": "privacy"
+        },
+        {
+            "type": "plugin",
+            "element": "actionlogs",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "article",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "blog",
+            "folder": "sampledata"
+        },
+        {
+            "type": "plugin",
+            "element": "cache",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "calendar",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "categories",
+            "folder": "finder"
+        },
+        {
+            "type": "plugin",
+            "element": "categories",
+            "folder": "search"
+        },
+        {
+            "type": "plugin",
+            "element": "checkboxes",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "codemirror",
+            "folder": "editors"
+        },
+        {
+            "type": "plugin",
+            "element": "color",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "confirmconsent",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "consents",
+            "folder": "privacy"
+        },
+        {
+            "type": "plugin",
+            "element": "contact",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "contact",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "contact",
+            "folder": "privacy"
+        },
+        {
+            "type": "plugin",
+            "element": "contactcreator",
+            "folder": "user"
+        },
+        {
+            "type": "plugin",
+            "element": "contacts",
+            "folder": "finder"
+        },
+        {
+            "type": "plugin",
+            "element": "contacts",
+            "folder": "search"
+        },
+        {
+            "type": "plugin",
+            "element": "content",
+            "folder": "finder"
+        },
+        {
+            "type": "plugin",
+            "element": "content",
+            "folder": "privacy"
+        },
+        {
+            "type": "plugin",
+            "element": "content",
+            "folder": "search"
+        },
+        {
+            "type": "plugin",
+            "element": "cookie",
+            "folder": "authentication"
+        },
+        {
+            "type": "plugin",
+            "element": "debug",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "editor",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "emailcloak",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "extensionupdate",
+            "folder": "quickicon"
+        },
+        {
+            "type": "plugin",
+            "element": "fields",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "fields",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "fields",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "finder",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "folderinstaller",
+            "folder": "installer"
+        },
+        {
+            "type": "plugin",
+            "element": "gmail",
+            "folder": "authentication"
+        },
+        {
+            "type": "plugin",
+            "element": "highlight",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "image",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "imagelist",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "integer",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "joomla",
+            "folder": "actionlog"
+        },
+        {
+            "type": "plugin",
+            "element": "joomla",
+            "folder": "authentication"
+        },
+        {
+            "type": "plugin",
+            "element": "joomla",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "joomla",
+            "folder": "extension"
+        },
+        {
+            "type": "plugin",
+            "element": "joomla",
+            "folder": "user"
+        },
+        {
+            "type": "plugin",
+            "element": "joomlaupdate",
+            "folder": "quickicon"
+        },
+        {
+            "type": "plugin",
+            "element": "languagecode",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "languagefilter",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "ldap",
+            "folder": "authentication"
+        },
+        {
+            "type": "plugin",
+            "element": "list",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "loadmodule",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "log",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "logout",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "logrotation",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "media",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "menu",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "message",
+            "folder": "privacy"
+        },
+        {
+            "type": "plugin",
+            "element": "module",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "newsfeeds",
+            "folder": "finder"
+        },
+        {
+            "type": "plugin",
+            "element": "newsfeeds",
+            "folder": "search"
+        },
+        {
+            "type": "plugin",
+            "element": "none",
+            "folder": "editors"
+        },
+        {
+            "type": "plugin",
+            "element": "p3p",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "packageinstaller",
+            "folder": "installer"
+        },
+        {
+            "type": "plugin",
+            "element": "pagebreak",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "pagebreak",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "pagenavigation",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "phpversioncheck",
+            "folder": "quickicon"
+        },
+        {
+            "type": "plugin",
+            "element": "privacycheck",
+            "folder": "quickicon"
+        },
+        {
+            "type": "plugin",
+            "element": "privacyconsent",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "profile",
+            "folder": "user"
+        },
+        {
+            "type": "plugin",
+            "element": "radio",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "readmore",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "recaptcha",
+            "folder": "captcha"
+        },
+        {
+            "type": "plugin",
+            "element": "recaptcha_invisible",
+            "folder": "captcha"
+        },
+        {
+            "type": "plugin",
+            "element": "redirect",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "remember",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "repeatable",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "sef",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "sessiongc",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "sql",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "stats",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "tags",
+            "folder": "finder"
+        },
+        {
+            "type": "plugin",
+            "element": "tags",
+            "folder": "search"
+        },
+        {
+            "type": "plugin",
+            "element": "terms",
+            "folder": "user"
+        },
+        {
+            "type": "plugin",
+            "element": "text",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "textarea",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "tinymce",
+            "folder": "editors"
+        },
+        {
+            "type": "plugin",
+            "element": "totp",
+            "folder": "twofactorauth"
+        },
+        {
+            "type": "plugin",
+            "element": "updatenotification",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "url",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "urlinstaller",
+            "folder": "installer"
+        },
+        {
+            "type": "plugin",
+            "element": "user",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "user",
+            "folder": "privacy"
+        },
+        {
+            "type": "plugin",
+            "element": "usergrouplist",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "vote",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "yubikey",
+            "folder": "twofactorauth"
+        },
+        {
+            "type": "template",
+            "element": "beez3",
+            "folder": ""
+        },
+        {
+            "type": "template",
+            "element": "hathor",
+            "folder": ""
+        },
+        {
+            "type": "template",
+            "element": "isis",
+            "folder": ""
+        },
+        {
+            "type": "template",
+            "element": "protostar",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_actionlogs",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_admin",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_ajax",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_associations",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_banners",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_cache",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_categories",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_checkin",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_config",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_contact",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_content",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_contenthistory",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_cpanel",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_csp",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_fields",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_finder",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_installer",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_joomlaupdate",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_languages",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_login",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_mails",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_media",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_menus",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_messages",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_modules",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_newsfeeds",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_plugins",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_postinstall",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_privacy",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_redirect",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_tags",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_templates",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_users",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_workflow",
+            "folder": ""
+        },
+        {
+            "type": "component",
+            "element": "com_wrapper",
+            "folder": ""
+        },
+        {
+            "type": "file",
+            "element": "joomla",
+            "folder": ""
+        },
+        {
+            "type": "language",
+            "element": "en-GB",
+            "folder": ""
+        },
+        {
+            "type": "language",
+            "element": "en-GB",
+            "folder": ""
+        },
+        {
+            "type": "language",
+            "element": "en-GB",
+            "folder": ""
+        },
+        {
+            "type": "library",
+            "element": "joomla",
+            "folder": ""
+        },
+        {
+            "type": "library",
+            "element": "phpass",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_articles_archive",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_articles_categories",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_articles_category",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_articles_latest",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_articles_news",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_articles_popular",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_banners",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_breadcrumbs",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_custom",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_custom",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_feed",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_feed",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_finder",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_footer",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_frontend",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_languages",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_latest",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_latestactions",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_logged",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_login",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_login",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_loginsupport",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_menu",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_menu",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_messages",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_multilangstatus",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_popular",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_post_installation_messages",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_privacy_dashboard",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_privacy_status",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_quickicon",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_random_image",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_related_items",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_sampledata",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_stats",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_stats_admin",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_submenu",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_syndicate",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_tags_popular",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_tags_similar",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_title",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_toolbar",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_user",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_users_latest",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_version",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_whosonline",
+            "folder": ""
+        },
+        {
+            "type": "module",
+            "element": "mod_wrapper",
+            "folder": ""
+        },
+        {
+            "type": "package",
+            "element": "pkg_en-GB",
+            "folder": ""
+        },
+        {
+            "type": "plugin",
+            "element": "accessibility",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "actionlogs",
+            "folder": "privacy"
+        },
+        {
+            "type": "plugin",
+            "element": "actionlogs",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "article",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "banners",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "basic",
+            "folder": "api-authentication"
+        },
+        {
+            "type": "plugin",
+            "element": "blog",
+            "folder": "sampledata"
+        },
+        {
+            "type": "plugin",
+            "element": "cache",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "calendar",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "categories",
+            "folder": "finder"
+        },
+        {
+            "type": "plugin",
+            "element": "checkboxes",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "codemirror",
+            "folder": "editors"
+        },
+        {
+            "type": "plugin",
+            "element": "color",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "config",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "confirmconsent",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "consents",
+            "folder": "privacy"
+        },
+        {
+            "type": "plugin",
+            "element": "contact",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "contact",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "contact",
+            "folder": "privacy"
+        },
+        {
+            "type": "plugin",
+            "element": "contact",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "contactcreator",
+            "folder": "user"
+        },
+        {
+            "type": "plugin",
+            "element": "contacts",
+            "folder": "finder"
+        },
+        {
+            "type": "plugin",
+            "element": "content",
+            "folder": "finder"
+        },
+        {
+            "type": "plugin",
+            "element": "content",
+            "folder": "privacy"
+        },
+        {
+            "type": "plugin",
+            "element": "content",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "cookie",
+            "folder": "authentication"
+        },
+        {
+            "type": "plugin",
+            "element": "crop",
+            "folder": "media-action"
+        },
+        {
+            "type": "plugin",
+            "element": "debug",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "downloadkey",
+            "folder": "quickicon"
+        },
+        {
+            "type": "plugin",
+            "element": "editor",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "emailcloak",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "extensionupdate",
+            "folder": "quickicon"
+        },
+        {
+            "type": "plugin",
+            "element": "featuring",
+            "folder": "workflow"
+        },
+        {
+            "type": "plugin",
+            "element": "fields",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "fields",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "fields",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "finder",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "finder",
+            "folder": "extension"
+        },
+        {
+            "type": "plugin",
+            "element": "folderinstaller",
+            "folder": "installer"
+        },
+        {
+            "type": "plugin",
+            "element": "highlight",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "httpheaders",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "image",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "imagelist",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "installer",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "integer",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "joomla",
+            "folder": "actionlog"
+        },
+        {
+            "type": "plugin",
+            "element": "joomla",
+            "folder": "authentication"
+        },
+        {
+            "type": "plugin",
+            "element": "joomla",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "joomla",
+            "folder": "extension"
+        },
+        {
+            "type": "plugin",
+            "element": "joomla",
+            "folder": "user"
+        },
+        {
+            "type": "plugin",
+            "element": "joomlaupdate",
+            "folder": "quickicon"
+        },
+        {
+            "type": "plugin",
+            "element": "languagecode",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "languagefilter",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "languages",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "ldap",
+            "folder": "authentication"
+        },
+        {
+            "type": "plugin",
+            "element": "list",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "loadmodule",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "local",
+            "folder": "filesystem"
+        },
+        {
+            "type": "plugin",
+            "element": "log",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "logout",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "logrotation",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "media",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "menu",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "menus",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "message",
+            "folder": "privacy"
+        },
+        {
+            "type": "plugin",
+            "element": "messages",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "module",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "modules",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "multilang",
+            "folder": "sampledata"
+        },
+        {
+            "type": "plugin",
+            "element": "namespacemap",
+            "folder": "extension"
+        },
+        {
+            "type": "plugin",
+            "element": "newsfeeds",
+            "folder": "finder"
+        },
+        {
+            "type": "plugin",
+            "element": "newsfeeds",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "none",
+            "folder": "editors"
+        },
+        {
+            "type": "plugin",
+            "element": "notification",
+            "folder": "workflow"
+        },
+        {
+            "type": "plugin",
+            "element": "override",
+            "folder": "installer"
+        },
+        {
+            "type": "plugin",
+            "element": "overridecheck",
+            "folder": "quickicon"
+        },
+        {
+            "type": "plugin",
+            "element": "packageinstaller",
+            "folder": "installer"
+        },
+        {
+            "type": "plugin",
+            "element": "pagebreak",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "pagebreak",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "pagenavigation",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "phpversioncheck",
+            "folder": "quickicon"
+        },
+        {
+            "type": "plugin",
+            "element": "plugins",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "privacy",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "privacycheck",
+            "folder": "quickicon"
+        },
+        {
+            "type": "plugin",
+            "element": "privacyconsent",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "profile",
+            "folder": "user"
+        },
+        {
+            "type": "plugin",
+            "element": "publishing",
+            "folder": "workflow"
+        },
+        {
+            "type": "plugin",
+            "element": "radio",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "readmore",
+            "folder": "editors-xtd"
+        },
+        {
+            "type": "plugin",
+            "element": "recaptcha",
+            "folder": "captcha"
+        },
+        {
+            "type": "plugin",
+            "element": "recaptcha_invisible",
+            "folder": "captcha"
+        },
+        {
+            "type": "plugin",
+            "element": "redirect",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "redirect",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "remember",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "resize",
+            "folder": "media-action"
+        },
+        {
+            "type": "plugin",
+            "element": "rotate",
+            "folder": "media-action"
+        },
+        {
+            "type": "plugin",
+            "element": "sef",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "sessiongc",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "skipto",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "sql",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "stats",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "subfields",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "taggable",
+            "folder": "behaviour"
+        },
+        {
+            "type": "plugin",
+            "element": "tags",
+            "folder": "finder"
+        },
+        {
+            "type": "plugin",
+            "element": "tags",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "templates",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "terms",
+            "folder": "user"
+        },
+        {
+            "type": "plugin",
+            "element": "text",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "textarea",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "tinymce",
+            "folder": "editors"
+        },
+        {
+            "type": "plugin",
+            "element": "token",
+            "folder": "api-authentication"
+        },
+        {
+            "type": "plugin",
+            "element": "token",
+            "folder": "user"
+        },
+        {
+            "type": "plugin",
+            "element": "totp",
+            "folder": "twofactorauth"
+        },
+        {
+            "type": "plugin",
+            "element": "updatenotification",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "url",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "urlinstaller",
+            "folder": "installer"
+        },
+        {
+            "type": "plugin",
+            "element": "user",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "user",
+            "folder": "privacy"
+        },
+        {
+            "type": "plugin",
+            "element": "usergrouplist",
+            "folder": "fields"
+        },
+        {
+            "type": "plugin",
+            "element": "users",
+            "folder": "webservices"
+        },
+        {
+            "type": "plugin",
+            "element": "versionable",
+            "folder": "behaviour"
+        },
+        {
+            "type": "plugin",
+            "element": "vote",
+            "folder": "content"
+        },
+        {
+            "type": "plugin",
+            "element": "webauthn",
+            "folder": "system"
+        },
+        {
+            "type": "plugin",
+            "element": "webinstaller",
+            "folder": "installer"
+        },
+        {
+            "type": "plugin",
+            "element": "yubikey",
+            "folder": "twofactorauth"
+        },
+        {
+            "type": "template",
+            "element": "atum",
+            "folder": ""
+        },
+        {
+            "type": "template",
+            "element": "cassiopeia",
+            "folder": ""
+        }
+    ],
+    "tables": [
+        "#__action_log_config",
+        "#__action_logs",
+        "#__action_logs_extensions",
+        "#__action_logs_users",
+        "#__assets",
+        "#__associations",
+        "#__banner_clients",
+        "#__banner_tracks",
+        "#__banners",
+        "#__categories",
+        "#__contact_details",
+        "#__content",
+        "#__content_frontpage",
+        "#__content_rating",
+        "#__content_types",
+        "#__contentitem_tag_map",
+        "#__core_log_searches",
+        "#__extensions",
+        "#__fields",
+        "#__fields_categories",
+        "#__fields_groups",
+        "#__fields_values",
+        "#__finder_filters",
+        "#__finder_links",
+        "#__finder_links_terms0",
+        "#__finder_links_terms1",
+        "#__finder_links_terms2",
+        "#__finder_links_terms3",
+        "#__finder_links_terms4",
+        "#__finder_links_terms5",
+        "#__finder_links_terms6",
+        "#__finder_links_terms7",
+        "#__finder_links_terms8",
+        "#__finder_links_terms9",
+        "#__finder_links_termsa",
+        "#__finder_links_termsb",
+        "#__finder_links_termsc",
+        "#__finder_links_termsd",
+        "#__finder_links_termse",
+        "#__finder_links_termsf",
+        "#__finder_taxonomy",
+        "#__finder_taxonomy_map",
+        "#__finder_terms",
+        "#__finder_terms_common",
+        "#__finder_tokens",
+        "#__finder_tokens_aggregate",
+        "#__finder_types",
+        "#__languages",
+        "#__menu",
+        "#__menu_types",
+        "#__messages",
+        "#__messages_cfg",
+        "#__modules",
+        "#__modules_menu",
+        "#__newsfeeds",
+        "#__overrider",
+        "#__postinstall_messages",
+        "#__privacy_consents",
+        "#__privacy_requests",
+        "#__redirect_links",
+        "#__schemas",
+        "#__session",
+        "#__tags",
+        "#__template_styles",
+        "#__ucm_base",
+        "#__ucm_content",
+        "#__ucm_history",
+        "#__update_sites",
+        "#__update_sites_extensions",
+        "#__updates",
+        "#__user_keys",
+        "#__user_notes",
+        "#__user_profiles",
+        "#__user_usergroup_map",
+        "#__usergroups",
+        "#__users",
+        "#__utf8_conversion",
+        "#__viewlevels",
+        "#__csp",
+        "#__finder_links_terms",
+        "#__finder_logging",
+        "#__history",
+        "#__mail_templates",
+        "#__template_overrides",
+        "#__webauthn_credentials",
+        "#__workflow_associations",
+        "#__workflow_stages",
+        "#__workflow_transitions",
+        "#__workflows"
+    ]
+}

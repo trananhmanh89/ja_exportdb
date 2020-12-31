@@ -1,0 +1,10 @@
+{
+    "require": {
+        "ifsnop/mysqldump-php": "^2.9",
+        "joomla/database": "^1.7",
+        "joomla/filesystem": "^1.6",
+        "joomla/registry": "^1.6",
+        "joomla/input": "^1.4",
+        "joomla/http": "^1.3"
+    }
+}
