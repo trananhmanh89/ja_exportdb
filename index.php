@@ -5,6 +5,7 @@ use Joomla\Database\DatabaseFactory;
 use Joomla\Database\DatabaseDriver;
 use Joomla\Filesystem\File;
 use Joomla\Filesystem\Folder;
+use Joomla\Filesystem\Path;
 use Joomla\Http\HttpFactory;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
@@ -480,8 +481,8 @@ class App
         $dumper = new Mysqldump("mysql:host=$host;dbname=$dbName", $user, $pass, $settings);
         $dumper->setTableWheres($tableWheres);
 
-        if (!empty($data['home'])) {
-            $dumper->setTransformTableRowHook(function ($tableName, array $row) use ($prefix, $data) {
+        $dumper->setTransformTableRowHook(function ($tableName, array $row) use ($prefix, $data) {
+            if (!empty($data['home'])) {
                 if ($tableName === $prefix . 'menu') {
                     foreach ($data['home'] as $key => $value) {
                         if ($key !== $row['language']) {
@@ -495,16 +496,23 @@ class App
                         }
                     }
                 }
+            }
 
-                if ($tableName === $prefix . 'users') {
-                    if ($row['id'] == 42) {
-                        $row['password'] = password_hash('joom@admin@vnn', PASSWORD_BCRYPT);
-                    }
+            if ($tableName === $prefix . 'users') {
+                if ($row['id'] == 42) {
+                    $row['password'] = password_hash('joom@admin@vnn', PASSWORD_BCRYPT);
                 }
-                
-                return $row;
-            });
-        }
+            }
+
+            if ($tableName === $prefix . 'acym_configuration') {
+                // fix mysqli syntax error when insert uploadfolder patch
+                if ($row['name'] === 'uploadfolder') {
+                    $row['value'] = str_replace('\\', '/', $row['value']);
+                }
+            }
+            
+            return $row;
+        });
 
         $target = $isLocal
             ? JPATH_ROOT . '/local/' . $svnFolder . '/' . $fileName . '.sql'
