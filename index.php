@@ -521,7 +521,7 @@ class App
         try {
             $dumper->start($target);
             $content = file_get_contents($target);
-            $content = str_replace("`$prefix", "`#__", $content);
+            $content = str_replace("$prefix", "#__", $content);
             File::write($target, $content);
         } catch (Exception $e) {
             die(json_encode(array('error' => $e->getMessage())));
