@@ -6,11 +6,11 @@
     <title>DB Export</title>
     <link rel="stylesheet" href="<?php echo $this->uri_root . 'assets/bootstrap.min.css' ?>">
     <link rel="stylesheet" href="<?php echo $this->uri_root . 'assets/select2.min.css' ?>">
-    <link rel="stylesheet" href="<?php echo $this->uri_root . 'assets/style.css' ?>">
+    <link rel="stylesheet" href="<?php echo $this->uri_root . 'assets/style.css?t=' . time() ?>">
     <script src="<?php echo $this->uri_root . 'assets/jquery.min.js' ?>"></script>
     <script src="<?php echo $this->uri_root . 'assets/jquery.mark.min.js' ?>"></script>
     <script src="<?php echo $this->uri_root . 'assets/select2.min.js' ?>"></script>
-    <script src="<?php echo $this->uri_root . 'assets/script.js' ?>"></script>
+    <script src="<?php echo $this->uri_root . 'assets/script.js?t=' . time() ?>"></script>
     <script>
         uri_root = '<?php echo $this->uri_root ?>';
     </script>
