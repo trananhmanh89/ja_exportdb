@@ -217,7 +217,7 @@ jQuery(document).ready($ => {
                 }
 
                 if (res.success) {
-                    const message = taskName === 'export' 
+                    const message = (taskName === 'export' || taskName === 'export_prefix')
                         ? 'Success. Check files at /local/' + $select.val() + '/'
                         : 'Commit success.';
 

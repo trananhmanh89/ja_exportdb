@@ -5,7 +5,6 @@ use Joomla\Database\DatabaseFactory;
 use Joomla\Database\DatabaseDriver;
 use Joomla\Filesystem\File;
 use Joomla\Filesystem\Folder;
-use Joomla\Filesystem\Path;
 use Joomla\Http\HttpFactory;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
@@ -34,6 +33,7 @@ class App
     protected $project;
     protected $uri_root;
     protected $uri_current;
+    const WITH_PREFIX = true;
 
     public function run()
     {
@@ -68,6 +68,10 @@ class App
 
         if ($task === 'export') {
             $this->export();
+        }
+
+        if ($task === 'export_prefix') {
+            $this->export(self::WITH_PREFIX);
         }
 
         if ($task === 'new_profile') {
@@ -373,7 +377,7 @@ class App
         }
     }
 
-    protected function export()
+    protected function export($withPrefix = false)
     {
         $file = $this->base_path . '/' . $this->folder . '/configuration.php';
         if (!file_exists($file)) {
@@ -392,6 +396,7 @@ class App
             'svn_folder' => $svnFolder,
             'jconfig' => $jConfig,
             'local' => true,
+            'withPrefix' => $withPrefix,
         ));
 
         $demoConfig = $this->input->get('demo', array(), 'array');
@@ -401,6 +406,7 @@ class App
             'svn_folder' => $svnFolder,
             'jconfig' => $jConfig,
             'local' => true,
+            'withPrefix' => $withPrefix,
         ));
 
         die(json_encode(array('success' => true)));
@@ -413,6 +419,7 @@ class App
         $svnFolder = $exportConfig['svn_folder'];
         $jConfig = $exportConfig['jconfig'];
         $isLocal = $exportConfig['local'];
+        $withPrefix = $exportConfig['withPrefix'];
 
         $host = $jConfig->host;
         $dbName = $jConfig->db;
@@ -520,9 +527,11 @@ class App
 
         try {
             $dumper->start($target);
-            $content = file_get_contents($target);
-            $content = str_replace("$prefix", "#__", $content);
-            File::write($target, $content);
+            if (!$withPrefix) {
+                $content = file_get_contents($target);
+                $content = str_replace("$prefix", "#__", $content);
+                File::write($target, $content);
+            }
         } catch (Exception $e) {
             die(json_encode(array('error' => $e->getMessage())));
         }

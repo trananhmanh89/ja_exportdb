@@ -59,6 +59,7 @@
                 </div>
                 <button type="button" class="btn btn-outline-success btn-new-svn-folder mr-2">New Folder</button>
                 <button type="button" class="btn btn-outline-primary btn-export mr-2" task="export">Export</button>
+                <button type="button" class="btn btn-outline-primary btn-export mr-2" task="export_prefix">Export Prefix</button>
                 <button type="button" class="btn btn-outline-danger btn-export" task="commit">Commit</button>
             </div>
             <input type="hidden" name="task" value="">
