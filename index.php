@@ -419,7 +419,7 @@ class App
         $svnFolder = $exportConfig['svn_folder'];
         $jConfig = $exportConfig['jconfig'];
         $isLocal = $exportConfig['local'];
-        $withPrefix = $exportConfig['withPrefix'];
+        $withPrefix = isset($exportConfig['withPrefix']) ? $exportConfig['withPrefix'] : false;
 
         $host = $jConfig->host;
         $dbName = $jConfig->db;
