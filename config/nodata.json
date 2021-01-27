@@ -1,4 +1,5 @@
 [
+    "#__action_logs",
     "#__finder_links",
     "#__finder_links_terms0",
     "#__finder_links_terms1",
@@ -21,5 +22,6 @@
     "#__finder_terms",
     "#__finder_terms_common",
     "#__finder_tokens",
-    "#__finder_tokens_aggregate"
+    "#__finder_tokens_aggregate",
+    "#__ucm_history"
 ]
