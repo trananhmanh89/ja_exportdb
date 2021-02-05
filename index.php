@@ -181,7 +181,7 @@ class App
         $host = $config->get('svn_host');
 
         $res = $this->connectToSvnHttp($host, $user, $pass);
-        if ($res->code === 200) {
+        if (isset($res->code) && $res->code === 200) {
             return true;
         }
 
@@ -199,7 +199,7 @@ class App
         try {
             return $http->get($host, $headers);
         } catch (Exception $e) {
-            die('<pre>'.print_r($e, 1).'</pre>');
+            return false;
         }
     }
 
