@@ -1,4 +1,29 @@
 jQuery(document).ready($ => {
+    initExportButton();
+    initProfileSelection();
+    initShiftCheckbox();
+    initNavTab();
+    initActiveTab(sessionStorage.getItem('tab:' + location.href));
+    initFilter($('.config-extension'));
+    initFilter($('.config-table'));
+
+    $('.extension-list .btn-delete-ext').on('click', e => {
+        const $el = $(e.currentTarget);
+        const extension_id = $el.data('id');
+
+        const ok = confirm('Are you sure?');
+        if (!ok) {
+            return;
+        }
+
+        const $form = $('.form-export');
+        const $task = $form.find('input[name=task]');
+
+        $task.val('delete_extension');
+        $form.append(`<input type="hidden" name="extension_id" value="${extension_id}" />`);
+        $form.submit();
+    })
+
     function loading(state) {
         if (state) {
             $('.loader').css('display', 'flex');
@@ -76,49 +101,49 @@ jQuery(document).ready($ => {
             $el.parent().addClass('active');
 
             type = $el.attr('data-type');
-            showMatchedElements(type, search)
+            showMatchedElements($container, type, search)
         });
 
         $container.find('.input-filter-name').on('input', event => {
             search = $(event.currentTarget).val().trim().toLowerCase();
-            showMatchedElements(type, search);
+            showMatchedElements($container, type, search);
         })
+    }
 
-        function showMatchedElements(type, search) {
-            $container.find('.item').addClass('hidden');
+    function showMatchedElements($container, type, search) {
+        $container.find('.item').addClass('hidden');
 
-            const className = '.item';
-            const attr = type === '*' ? '' : '[data-type=' + type + ']';
-            const $byTypeItems = $container.find(className + attr);
+        const className = '.item';
+        const attr = type === '*' ? '' : '[data-type=' + type + ']';
+        const $byTypeItems = $container.find(className + attr);
 
-            $byTypeItems.each((idx, el) => {
-                const $el = $(el);
-                const $name = $el.find('.item-name');
-                const $element = $el.find('.item-element');
-                const _name = $name.text().toLowerCase();
-                const _element = $element.text().toLowerCase();
+        $byTypeItems.each((idx, el) => {
+            const $el = $(el);
+            const $name = $el.find('.item-name');
+            const $element = $el.find('.item-element');
+            const _name = $name.text().toLowerCase();
+            const _element = $element.text().toLowerCase();
 
-                if (!search || _name.indexOf(search) !== -1 || _element.indexOf(search) !== -1) {
-                    $el.removeClass('hidden');
-                    $name.unmark({
-                        done() {
-                            $name.mark(search, {
-                                separateWordSearch: false,
-                                diacritics: false,
-                            });
-                        }
-                    })
-                    $element.unmark({
-                        done() {
-                            $element.mark(search, {
-                                separateWordSearch: false,
-                                diacritics: false,
-                            });
-                        }
-                    })
-                }
-            })
-        }
+            if (!search || _name.indexOf(search) !== -1 || _element.indexOf(search) !== -1) {
+                $el.removeClass('hidden');
+                $name.unmark({
+                    done() {
+                        $name.mark(search, {
+                            separateWordSearch: false,
+                            diacritics: false,
+                        });
+                    }
+                })
+                $element.unmark({
+                    done() {
+                        $element.mark(search, {
+                            separateWordSearch: false,
+                            diacritics: false,
+                        });
+                    }
+                })
+            }
+        })
     }
 
     function initProfileSelection() {
@@ -301,12 +326,4 @@ jQuery(document).ready($ => {
             });
         });
     }
-
-    initExportButton();
-    initProfileSelection();
-    initShiftCheckbox();
-    initNavTab();
-    initActiveTab(sessionStorage.getItem('tab:' + location.href));
-    initFilter($('.config-extension'));
-    initFilter($('.config-table'));
 });

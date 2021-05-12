@@ -33,6 +33,7 @@ class App
     protected $project;
     protected $uri_root;
     protected $uri_current;
+    protected $error = array();
     const WITH_PREFIX = true;
 
     public function run()
@@ -50,6 +51,11 @@ class App
         }
 
         $task = $this->input->get('task');
+
+        if ($task === 'delete_extension') {
+            $this->deleteExtension();
+        }
+
         if ($task === 'get_list_svn_folder') {
             $this->getListSvnFolder();
         }
@@ -105,6 +111,27 @@ class App
                 require JPATH_ROOT . '/tmpl/default.php';
                 break;
         }
+    }
+
+    protected function deleteExtension()
+    {
+        $db = $this->getDbo();
+        $query = $db->getQuery(true)
+            ->delete($db->qn('#__extensions'))
+            ->where($db->qn('extension_id') . '=' . $db->q($this->input->getInt('extension_id', 0)));
+
+        $db->setQuery($query)->execute();
+
+        header('Location: ' . $this->uri_current);
+    }
+
+    protected function getJVersion()
+    {
+        $file = $this->base_path . '/' . $this->folder  . '/libraries/src/Version.php';
+        $content = file_get_contents($file);
+        preg_match('/const.*?MAJOR_VERSION.*?(\d+)/', $content, $match);
+
+        return $match[1];
     }
 
     protected function newSvnFolder()
@@ -643,6 +670,7 @@ class App
 
     protected function getExtensions()
     {
+        $jversion = $this->getJVersion();
         $db = $this->getDbo();
         $query = $db->getQuery(true)
             ->select($db->qn(array(
@@ -665,6 +693,51 @@ class App
         
         $query->select($case);
         $extensions = $db->setQuery($query)->loadObjectList();
+        foreach ($extensions as $ext) {
+            $basePath = $this->base_path . '/' . $this->folder;
+            $client_path = $ext->client_id ? $basePath . '/administrator' : $basePath;
+            $file = '';
+            switch ($ext->type) {
+                case 'component':
+                    $name = substr($ext->element, 4);
+                    $file = "$client_path/components/{$ext->element}/$name.xml";
+                    break;
+
+                case 'file':
+                    $file = "$basePath/administrator/manifests/files/{$ext->element}.xml";
+                    break;
+
+                case 'language':
+                    $name = $jversion == 4 ? 'langmetadata' : $ext->element;
+                    $file = "$client_path/language/{$ext->element}/$name.xml";
+                    break;
+
+                case 'library':
+                    $file = "$basePath/administrator/manifests/libraries/{$ext->element}.xml";
+                    break;
+
+                case 'module':
+                    $file = "$client_path/modules/{$ext->element}/{$ext->element}.xml";
+                    break;
+
+                case 'package':
+                    $file = "$basePath/administrator/manifests/packages/{$ext->element}.xml";
+                    break;
+
+                case 'plugin':
+                    $file = "$client_path/plugins/{$ext->folder}/{$ext->element}/{$ext->element}.xml";
+                    break;
+
+                case 'template':
+                    $file = "$client_path/templates/{$ext->element}/templateDetails.xml";
+                    break;
+            }
+
+            if (!$file || !file_exists($file)) {
+                $this->error[] = "Missing xml [{$ext->type}] [{$ext->element}] [{$ext->folder}] $file";
+            }
+        }
+
         return array_filter($extensions, function($ext) {
             return !$ext->hidden;
         });

@@ -31,7 +31,7 @@ $qsExtensionsSelected = isset($qs->extension) ? $qs->extension : array();
             </div>
         <?php endforeach ?>
     </div>
-    <table class="table table-sm table-bordered mt-3">
+    <table class="table table-sm table-bordered mt-3 extension-list">
         <thead class="thead-light">
             <tr>
                 <th width="6%">ID</th>
@@ -40,6 +40,7 @@ $qsExtensionsSelected = isset($qs->extension) ? $qs->extension : array();
                 <th>Element</th>
                 <th>QS</th>
                 <th>Demo</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -73,6 +74,7 @@ $qsExtensionsSelected = isset($qs->extension) ? $qs->extension : array();
                             <?php echo in_array($ext->extension_id, $demoExtensionsSelected) ? 'checked' : ''  ?>
                         >
                     </td>
+                    <td><button class="btn btn-sm btn-outline-danger btn-delete-ext" data-id="<?php echo $ext->extension_id ?>" type="button">delete</button></td>
                 </tr>
             <?php endforeach ?>
         </tbody>

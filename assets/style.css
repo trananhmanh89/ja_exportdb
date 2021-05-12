@@ -70,6 +70,10 @@ body {
     background-color: #fffcf1;
 }
 
+.table td {
+    vertical-align: middle;
+}
+
 /* loader */
 .loader {
     display: none;

@@ -66,6 +66,14 @@
             <input type="hidden" name="msg" value="">
             <input type="hidden" name="folder" value="<?php echo $this->folder ?>">
             <br>
+            <?php if ($this->error): ?>
+                <div class="alert alert-danger" role="alert">
+                    <div><strong>Error</strong></div>
+                    <?php foreach ($this->error as $error): ?>
+                        <div><?php echo $error ?></div>
+                    <?php endforeach ?>
+                </div>
+            <?php endif ?>
             <?php if ($this->project) : ?>
                 <div class="db-nav">
                     <ul class="nav nav-tabs">
