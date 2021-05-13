@@ -75,6 +75,15 @@
                 </div>
             <?php endif ?>
             <?php if ($this->project) : ?>
+                <hr>
+                <div class="hints" style="font-size: .8rem;">
+                    <div>*** GUIDE ***</div>
+                    <div>* <b>QS</b> - Quick Start</div>
+                    <div>* Ticking checkbox means you don't want to export it</div>
+                    <div>* <b>Menu</b>: Ticking checkbox means you don't want to export it. </div>
+                    <div>* <b>Menu > Home QS | Demo</b>: Set menu to be default after exporting</div>
+                </div>
+                <br>
                 <div class="db-nav">
                     <ul class="nav nav-tabs">
                         <li class="nav-item" data-content="extension">
