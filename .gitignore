@@ -1,4 +1,5 @@
 /config/config.json
 /local
 /svn
+/profiles
 composer.lock
