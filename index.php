@@ -38,8 +38,8 @@ class App
 
     public function run()
     {
-        $this->config = $this->getConfig();
         $this->input = new Input();
+        $this->config = $this->getConfig();
         $this->uri_root = $this->getUriRoot();
         $this->uri_current = $this->getUriCurrent();
         $this->base_path = $this->getBasePath();
@@ -232,6 +232,11 @@ class App
 
     protected function getConfig()
     {
+        $fileConfig = JPATH_ROOT . '/config/config.json';
+        if (!file_exists($fileConfig)) {
+            return $this->saveConfig();
+        }
+
         $config = new Registry();
         $config->loadFile(JPATH_ROOT . '/config/config.json');
 
