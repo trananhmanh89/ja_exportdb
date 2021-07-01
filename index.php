@@ -131,7 +131,7 @@ class App
         $content = file_get_contents($file);
         preg_match('/const.*?MAJOR_VERSION.*?(\d+)/', $content, $match);
 
-        return $match[1];
+        return (int) $match[1];
     }
 
     protected function newSvnFolder()
@@ -343,6 +343,7 @@ class App
             die(json_encode(array('error' => 'configuration.php not found')));
         }
 
+        $jversion = $this->getJVersion();
         require_once $file;
         $jConfig = new JConfig;
         $svnFolder = $this->input->get('svn_folder');
@@ -365,7 +366,7 @@ class App
 
         $qsConfig = $this->input->get('qs', array(), 'array');
         $this->exportSampleData(array(
-            'file_name' => 'sample_data',
+            'file_name' => $jversion === 4 ? 'custom' : 'sample_data',
             'data' => $qsConfig,
             'svn_folder' => $svnFolder,
             'jconfig' => $jConfig,
@@ -416,6 +417,7 @@ class App
             die(json_encode(array('error' => 'configuration.php not found')));
         }
 
+        $jversion = $this->getJVersion();
         require_once $file;
         $jConfig = new JConfig;
         $svnFolder = $this->input->get('svn_folder');
@@ -423,7 +425,7 @@ class App
 
         $qsConfig = $this->input->get('qs', array(), 'array');
         $this->exportSampleData(array(
-            'file_name' => 'sample_data',
+            'file_name' => $jversion === 4 ? 'custom' : 'sample_data',
             'data' => $qsConfig,
             'svn_folder' => $svnFolder,
             'jconfig' => $jConfig,
@@ -689,14 +691,6 @@ class App
             ->from($db->qn('#__extensions'))
             ->order('extension_id DESC');
 
-        $hidden = json_decode(file_get_contents(JPATH_ROOT . '/config/hidden.json'));
-        $case = "(CASE ";
-        foreach ($hidden->extensions as $ext) {
-            $case .= " WHEN `type` = '{$ext->type}' AND `element` = '{$ext->element}' AND `folder` = '{$ext->folder}' THEN 1";
-        }
-        $case .= " ELSE 0 END) AS hidden";
-        
-        $query->select($case);
         $extensions = $db->setQuery($query)->loadObjectList();
         foreach ($extensions as $ext) {
             $basePath = $this->base_path . '/' . $this->folder;
@@ -743,9 +737,7 @@ class App
             }
         }
 
-        return array_filter($extensions, function($ext) {
-            return !$ext->hidden;
-        });
+        return $extensions;
     }
 
     protected function getDbo()

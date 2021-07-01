@@ -5,10 +5,7 @@ $demoTablesSelected = isset($demo->table) ? $demo->table : array();
 $qs = $this->profileConfig->get('qs');
 $qsTablesSelected = isset($qs->table) ? $qs->table : array();
 
-$hidden = json_decode(file_get_contents(JPATH_ROOT . '/config/hidden.json'));
-$displayTables = array_filter($this->project->tables, function($tbl) use ($hidden) {
-    return !in_array($tbl, $hidden->tables);
-});
+$displayTables = $this->project->tables;
 ?>
 <div class="config-table">
     <input type="hidden" name="qs[project-tables]" value="<?php echo htmlspecialchars(json_encode($this->project->tables)) ?>">

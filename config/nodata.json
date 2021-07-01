@@ -23,5 +23,6 @@
     "#__finder_terms_common",
     "#__finder_tokens",
     "#__finder_tokens_aggregate",
-    "#__ucm_history"
+    "#__ucm_history",
+    "#__schemas"
 ]
