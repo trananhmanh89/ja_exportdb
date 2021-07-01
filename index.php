@@ -480,6 +480,7 @@ class App
             'skip-dump-date' => true,
             'default-character-set' => Mysqldump::UTF8MB4,
             'no-autocommit' => false,
+            'add-locks' => false,
         );
 
         $db = $this->getDbo();
