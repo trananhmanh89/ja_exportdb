@@ -2,7 +2,7 @@
 /**
  * Part of the Joomla Framework Database Package
  *
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -261,7 +261,7 @@ abstract class DatabaseImporter
 			if (\in_array($tableName, $tables, true))
 			{
 				// The table already exists. Now check if there is any difference.
-				if ($queries = $this->getAlterTableql($xml->database->table_structure))
+				if ($queries = $this->getAlterTableSql($table))
 				{
 					// Run the queries to upgrade the data structure.
 					foreach ($queries as $query)

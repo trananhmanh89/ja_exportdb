@@ -2,7 +2,7 @@
 /**
  * Part of the Joomla Framework Database Package
  *
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -485,7 +485,7 @@ abstract class DatabaseDriver implements DatabaseInterface, Log\LoggerAwareInter
 				$trace = debug_backtrace();
 				trigger_error(
 					'Undefined property via __get(): ' . $name . ' in ' . $trace[0]['file'] . ' on line ' . $trace[0]['line'],
-					E_USER_NOTICE
+					\E_USER_NOTICE
 				);
 		}
 	}
@@ -1024,7 +1024,7 @@ abstract class DatabaseDriver implements DatabaseInterface, Log\LoggerAwareInter
 		foreach (get_object_vars($object) as $k => $v)
 		{
 			// Skip columns that don't exist in the table.
-			if (! array_key_exists($k, $tableColumns))
+			if (!\array_key_exists($k, $tableColumns))
 			{
 				continue;
 			}
@@ -1875,7 +1875,7 @@ abstract class DatabaseDriver implements DatabaseInterface, Log\LoggerAwareInter
 		foreach (get_object_vars($object) as $k => $v)
 		{
 			// Skip columns that don't exist in the table.
-			if (! array_key_exists($k, $tableColumns))
+			if (!\array_key_exists($k, $tableColumns))
 			{
 				continue;
 			}

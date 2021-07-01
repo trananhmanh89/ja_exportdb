@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -346,6 +346,12 @@ class QueryMysqliTest extends TestCase
 			$q->castAsChar('123'),
 			$this->equalTo('123'),
 			'The default castAsChar behaviour is quote the input.'
+		);
+
+		$this->assertThat(
+			$q->castAsChar('1234', 3),
+			$this->equalTo('CAST(1234 AS CHAR(3))'),
+			'With optional length parameter, castAsChar shall limit the output to that length.'
 		);
 	}
 

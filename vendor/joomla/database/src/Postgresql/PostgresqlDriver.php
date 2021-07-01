@@ -2,7 +2,7 @@
 /**
  * Part of the Joomla Framework Database Package
  *
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -199,7 +199,7 @@ class PostgresqlDriver extends DatabaseDriver
 			throw new ConnectionFailureException('Error connecting to PGSQL database.');
 		}
 
-		pg_set_error_verbosity($this->connection, PGSQL_ERRORS_DEFAULT);
+		pg_set_error_verbosity($this->connection, \PGSQL_ERRORS_DEFAULT);
 		pg_query($this->connection, 'SET standard_conforming_strings=off');
 		pg_query($this->connection, 'SET escape_string_warning=off');
 		pg_query($this->connection, 'SET bytea_output=escape');
@@ -415,7 +415,7 @@ class PostgresqlDriver extends DatabaseDriver
 	/**
 	 * Retrieves field information about a given table.
 	 *
-	 * @param   string   $table     The name of the database table.
+	 * @param   string   $table     The name of the database table. For PostgreSQL may start with a schema.
 	 * @param   boolean  $typeOnly  True to only return field types.
 	 *
 	 * @return  array  An array of fields for the database table.
@@ -428,8 +428,18 @@ class PostgresqlDriver extends DatabaseDriver
 		$this->connect();
 
 		$result = array();
-
 		$tableSub = $this->replacePrefix($table);
+		$fn = explode('.', $tableSub);
+
+		if (count($fn) === 2)
+		{
+			$schema = $fn[0];
+			$tableSub = $fn[1];
+		}
+		else
+		{
+			$schema = $this->getDefaultSchema();
+		}
 
 		$this->setQuery('
 			SELECT a.attname AS "column_name",
@@ -451,7 +461,7 @@ class PostgresqlDriver extends DatabaseDriver
 			WHERE a.attrelid =
 				(SELECT oid FROM pg_catalog.pg_class WHERE relname=' . $this->quote($tableSub) . '
 					AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE
-					nspname = \'public\')
+					nspname = ' . $this->quote($schema) . ')
 				)
 			AND a.attnum > 0 AND NOT a.attisdropped
 			ORDER BY a.attnum'
@@ -793,7 +803,7 @@ class PostgresqlDriver extends DatabaseDriver
 					// Only get an error number if we have a non-boolean false cursor, otherwise use default 0
 					if ($this->cursor !== false)
 					{
-						$this->errorNum = (int) pg_result_error_field($this->cursor, PGSQL_DIAG_SQLSTATE);
+						$this->errorNum = (int) pg_result_error_field($this->cursor, \PGSQL_DIAG_SQLSTATE);
 					}
 
 					// Throw the normal query exception.
@@ -811,7 +821,7 @@ class PostgresqlDriver extends DatabaseDriver
 			}
 
 			// The server was not disconnected.
-			$this->errorNum = (int) pg_result_error_field($this->cursor, PGSQL_DIAG_SQLSTATE);
+			$this->errorNum = (int) pg_result_error_field($this->cursor, \PGSQL_DIAG_SQLSTATE);
 			$this->errorMsg = pg_last_error($this->connection);
 
 			// Throw the normal query exception.
@@ -976,26 +986,26 @@ class PostgresqlDriver extends DatabaseDriver
 	/**
 	 * This function return a field value as a prepared string to be used in a SQL statement.
 	 *
-	 * @param   array   $columns      Array of table's column returned by ::getTableColumns.
-	 * @param   string  $field_name   The table field's name.
-	 * @param   string  $field_value  The variable value to quote and return.
+	 * @param   array   $columns     Array of table's column returned by ::getTableColumns.
+	 * @param   string  $fieldName   The table field's name.
+	 * @param   string  $fieldValue  The variable value to quote and return.
 	 *
 	 * @return  string  The quoted string.
 	 *
 	 * @since   1.0
 	 */
-	public function sqlValue($columns, $field_name, $field_value)
+	public function sqlValue($columns, $fieldName, $fieldValue)
 	{
-		switch ($columns[$field_name])
+		switch ($columns[$fieldName])
 		{
 			case 'boolean':
 				$val = 'NULL';
 
-				if ($field_value === 't' || $field_value === true || $field_value === 1 || $field_value === '1')
+				if ($fieldValue === 't' || $fieldValue === true || $fieldValue === 1 || $fieldValue === '1')
 				{
 					$val = 'TRUE';
 				}
-				elseif ($field_value === 'f' || $field_value === false || $field_value === 0 || $field_value === '0')
+				elseif ($fieldValue === 'f' || $fieldValue === false || $fieldValue === 0 || $fieldValue === '0')
 				{
 					$val = 'FALSE';
 				}
@@ -1011,23 +1021,23 @@ class PostgresqlDriver extends DatabaseDriver
 			case 'smallint':
 			case 'serial':
 			case 'numeric,':
-				$val = $field_value === '' ? 'NULL' : $field_value;
+				$val = $fieldValue === '' ? 'NULL' : $fieldValue;
 
 				break;
 
 			case 'date':
 			case 'timestamp without time zone':
-				if (empty($field_value))
+				if (empty($fieldValue))
 				{
-					$field_value = $this->getNullDate();
+					$fieldValue = $this->getNullDate();
 				}
 
-				$val = $this->quote($field_value);
+				$val = $this->quote($fieldValue);
 
 				break;
 
 			default:
-				$val = $this->quote($field_value);
+				$val = $this->quote($fieldValue);
 
 				break;
 		}
@@ -1214,7 +1224,7 @@ class PostgresqlDriver extends DatabaseDriver
 		foreach (get_object_vars($object) as $k => $v)
 		{
 			// Skip columns that don't exist in the table.
-			if (! array_key_exists($k, $columns))
+			if (!\array_key_exists($k, $columns))
 			{
 				continue;
 			}
@@ -1548,7 +1558,7 @@ class PostgresqlDriver extends DatabaseDriver
 		foreach (get_object_vars($object) as $k => $v)
 		{
 			// Skip columns that don't exist in the table.
-			if (! array_key_exists($k, $columns))
+			if (!\array_key_exists($k, $columns))
 			{
 				continue;
 			}
@@ -1629,11 +1639,27 @@ class PostgresqlDriver extends DatabaseDriver
 	 */
 	public function decodeBinary($data)
 	{
-		if (is_string($data))
+		if (\is_string($data))
 		{
 			return pg_unescape_bytea($data);
 		}
 
 		return $data;
+	}
+
+	/**
+	 * Internal function to get the name of the default schema for the current PostgreSQL connection.
+	 * That is the schema where tables are created by Joomla.
+	 *
+	 * @return  string
+	 *
+	 * @since   1.8.0
+	 */
+	private function getDefaultSchema()
+	{
+		// Supported since PostgreSQL 7.3
+		$this->setQuery('SELECT (current_schemas(false))[1]');
+
+		return $this->loadResult();
 	}
 }

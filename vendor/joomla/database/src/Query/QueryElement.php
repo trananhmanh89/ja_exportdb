@@ -2,7 +2,7 @@
 /**
  * Part of the Joomla Framework Database Package
  *
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -66,10 +66,10 @@ class QueryElement
 	{
 		if (substr($this->name, -2) === '()')
 		{
-			return PHP_EOL . substr($this->name, 0, -2) . '(' . implode($this->glue, $this->elements) . ')';
+			return \PHP_EOL . substr($this->name, 0, -2) . '(' . implode($this->glue, $this->elements) . ')';
 		}
 
-		return PHP_EOL . $this->name . ' ' . implode($this->glue, $this->elements);
+		return \PHP_EOL . $this->name . ' ' . implode($this->glue, $this->elements);
 	}
 
 	/**

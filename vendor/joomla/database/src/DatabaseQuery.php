@@ -2,7 +2,7 @@
 /**
  * Part of the Joomla Framework Database Package
  *
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -1396,7 +1396,7 @@ abstract class DatabaseQuery
 		if ($this->set === null)
 		{
 			$glue      = strtoupper($glue);
-			$this->set = new Query\QueryElement('SET', $conditions, PHP_EOL . "\t$glue ");
+			$this->set = new Query\QueryElement('SET', $conditions, \PHP_EOL . "\t$glue ");
 		}
 		else
 		{
@@ -1623,11 +1623,11 @@ abstract class DatabaseQuery
 		if ($distinct)
 		{
 			$name = 'UNION DISTINCT ()';
-			$glue = ')' . PHP_EOL . 'UNION DISTINCT (';
+			$glue = ')' . \PHP_EOL . 'UNION DISTINCT (';
 		}
 		else
 		{
-			$glue = ')' . PHP_EOL . 'UNION (';
+			$glue = ')' . \PHP_EOL . 'UNION (';
 			$name = 'UNION ()';
 		}
 
@@ -1664,7 +1664,7 @@ abstract class DatabaseQuery
 	 */
 	public function unionAll($query, $distinct = false, $glue = '')
 	{
-		$glue = ')' . PHP_EOL . 'UNION ALL (';
+		$glue = ')' . \PHP_EOL . 'UNION ALL (';
 		$name = 'UNION ALL ()';
 
 		// Get the QueryElement if it does not exist

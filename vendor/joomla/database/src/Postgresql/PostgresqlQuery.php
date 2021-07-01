@@ -2,7 +2,7 @@
 /**
  * Part of the Joomla Framework Database Package
  *
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -375,16 +375,25 @@ class PostgresqlQuery extends DatabaseQuery implements LimitableInterface, Prepa
 	 *
 	 * Usage:
 	 * $query->select($query->castAsChar('a'));
+	 * $query->select($query->castAsChar('a', 40));
 	 *
 	 * @param   string  $value  The value to cast as a char.
+	 * @param   string  $len    The length of the char.
 	 *
 	 * @return  string  Returns the cast value.
 	 *
 	 * @since   1.0
 	 */
-	public function castAsChar($value)
+	public function castAsChar($value, $len = null)
 	{
-		return $value . '::text';
+		if (!$len)
+		{
+			return $value . '::text';
+		}
+		else
+		{
+			return 'CAST(' . $value . ' AS CHAR(' . $len . '))';
+		}
 	}
 
 	/**
@@ -425,25 +434,25 @@ class PostgresqlQuery extends DatabaseQuery implements LimitableInterface, Prepa
 	/**
 	 * Sets the FOR UPDATE lock on select's output row
 	 *
-	 * @param   string  $table_name  The table to lock
-	 * @param   string  $glue        The glue by which to join the conditions. Defaults to ',' .
+	 * @param   string  $tableName  The table to lock
+	 * @param   string  $glue       The glue by which to join the conditions. Defaults to ',' .
 	 *
 	 * @return  PostgresqlQuery  FOR UPDATE query element
 	 *
 	 * @since   1.0
 	 */
-	public function forUpdate($table_name, $glue = ',')
+	public function forUpdate($tableName, $glue = ',')
 	{
 		$this->type = 'forUpdate';
 
 		if ($this->forUpdate === null)
 		{
 			$glue            = strtoupper($glue);
-			$this->forUpdate = new QueryElement('FOR UPDATE', 'OF ' . $table_name, "$glue ");
+			$this->forUpdate = new QueryElement('FOR UPDATE', 'OF ' . $tableName, "$glue ");
 		}
 		else
 		{
-			$this->forUpdate->append($table_name);
+			$this->forUpdate->append($tableName);
 		}
 
 		return $this;
@@ -452,25 +461,25 @@ class PostgresqlQuery extends DatabaseQuery implements LimitableInterface, Prepa
 	/**
 	 * Sets the FOR SHARE lock on select's output row
 	 *
-	 * @param   string  $table_name  The table to lock
-	 * @param   string  $glue        The glue by which to join the conditions. Defaults to ',' .
+	 * @param   string  $tableName  The table to lock
+	 * @param   string  $glue       The glue by which to join the conditions. Defaults to ',' .
 	 *
 	 * @return  PostgresqlQuery  FOR SHARE query element
 	 *
 	 * @since   1.0
 	 */
-	public function forShare($table_name, $glue = ',')
+	public function forShare($tableName, $glue = ',')
 	{
 		$this->type = 'forShare';
 
 		if ($this->forShare === null)
 		{
 			$glue           = strtoupper($glue);
-			$this->forShare = new QueryElement('FOR SHARE', 'OF ' . $table_name, "$glue ");
+			$this->forShare = new QueryElement('FOR SHARE', 'OF ' . $tableName, "$glue ");
 		}
 		else
 		{
-			$this->forShare->append($table_name);
+			$this->forShare->append($tableName);
 		}
 
 		return $this;
@@ -725,10 +734,10 @@ class PostgresqlQuery extends DatabaseQuery implements LimitableInterface, Prepa
 	{
 		if (substr($interval, 0, 1) !== '-')
 		{
-			return "timestamp " . $date . " + interval '" . $interval . " " . $datePart . "'";
+			return 'timestamp ' . $date . " + interval '" . $interval . ' ' . $datePart . "'";
 		}
 
-		return "timestamp " . $date . " - interval '" . ltrim($interval, '-') . " " . $datePart . "'";
+		return 'timestamp ' . $date . " - interval '" . ltrim($interval, '-') . ' ' . $datePart . "'";
 	}
 
 	/**

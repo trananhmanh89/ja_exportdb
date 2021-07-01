@@ -478,7 +478,8 @@ class App
             'reset-auto-increment' => true,
             'skip-comments' => true,
             'skip-dump-date' => true,
-            'default-character-set' => Mysqldump::UTF8MB4
+            'default-character-set' => Mysqldump::UTF8MB4,
+            'no-autocommit' => false,
         );
 
         $db = $this->getDbo();

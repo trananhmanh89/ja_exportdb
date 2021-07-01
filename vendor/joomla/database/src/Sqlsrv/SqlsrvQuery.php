@@ -2,7 +2,7 @@
 /**
  * Part of the Joomla Framework Database Package
  *
- * @copyright  Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -202,14 +202,22 @@ class SqlsrvQuery extends DatabaseQuery implements PreparableInterface
 	 * Ensure that the value is properly quoted before passing to the method.
 	 *
 	 * @param   string  $value  The value to cast as a char.
+	 * @param   string  $len    The length of the char.
 	 *
 	 * @return  string  Returns the cast value.
 	 *
 	 * @since   1.0
 	 */
-	public function castAsChar($value)
+	public function castAsChar($value, $len = null)
 	{
-		return 'CAST(' . $value . ' as NVARCHAR(10))';
+		if(!$len)
+		{
+			return 'CAST(' . $value . ' as NVARCHAR(30))';
+		}
+		else
+		{
+			return 'CAST(' . $value . ' as NVARCHAR(' . $len . '))';
+		}
 	}
 
 	/**
