@@ -24,5 +24,6 @@
     "#__finder_tokens",
     "#__finder_tokens_aggregate",
     "#__ucm_history",
+    "#__history",
     "#__schemas"
 ]
