@@ -9,6 +9,10 @@ use Joomla\Http\HttpFactory;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 define('JPATH_ROOT', __DIR__);
 
 require_once JPATH_ROOT . '/vendor/autoload.php';
