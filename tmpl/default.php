@@ -12,7 +12,8 @@
     <script src="<?php echo $this->uri_root . 'assets/select2.min.js' ?>"></script>
     <script src="<?php echo $this->uri_root . 'assets/script.js?t=' . time() ?>"></script>
     <script>
-        uri_root = '<?php echo $this->uri_root ?>';
+        var uri_root = '<?php echo $this->uri_root ?>';
+        var uri_current = '<?php echo $this->uri_current ?>';
     </script>
 </head>
 
@@ -66,22 +67,24 @@
             <input type="hidden" name="msg" value="">
             <input type="hidden" name="folder" value="<?php echo $this->folder ?>">
             <br>
-            <?php if ($this->error): ?>
-                <div class="alert alert-danger" role="alert">
-                    <div><strong>Error</strong></div>
-                    <?php foreach ($this->error as $error): ?>
-                        <div><?php echo $error ?></div>
-                    <?php endforeach ?>
-                </div>
-            <?php endif ?>
+            <div class="error-list">
+                <?php if ($this->error): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <div><strong>Error</strong></div>
+                        <?php foreach ($this->error as $error): ?>
+                            <div><?php echo $error ?></div>
+                        <?php endforeach ?>
+                    </div>
+                <?php endif ?>
+            </div>
             <?php if ($this->project) : ?>
                 <hr>
                 <div class="hints" style="font-size: .8rem;">
                     <div>*** GUIDE ***</div>
                     <div>* <b>QS</b> - Quick Start</div>
                     <div>* Ticking checkbox means you don't want to export it</div>
-                    <div>* <b>Menu</b>: Ticking checkbox means you don't want to export it. </div>
-                    <div>* <b>Menu > Home QS | Demo</b>: Set menu to be default after exporting</div>
+                    <div>* Ticking checkbox on <b>Demo</b> section means data won't be present on next build </div>
+                    <div>* <b>Menu > Home QS | Home Demo</b>: Set default menu when exporting</div>
                 </div>
                 <br>
                 <div class="db-nav">

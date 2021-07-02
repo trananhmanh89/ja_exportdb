@@ -126,7 +126,7 @@ class App
 
         $db->setQuery($query)->execute();
 
-        header('Location: ' . $this->uri_current);
+        die(json_encode(array('success' => true)));
     }
 
     protected function getJVersion()

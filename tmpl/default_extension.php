@@ -34,9 +34,10 @@ $qsExtensionsSelected = isset($qs->extension) ? $qs->extension : array();
     <table class="table table-sm table-bordered mt-3 extension-list">
         <thead class="thead-light">
             <tr>
-                <th width="6%">ID</th>
-                <th width="50%">Name</th>
+                <th>ID</th>
+                <th>Name</th>
                 <th>Type</th>
+                <th>Folder</th>
                 <th>Element</th>
                 <th>QS</th>
                 <th>Demo</th>
@@ -51,6 +52,7 @@ $qsExtensionsSelected = isset($qs->extension) ? $qs->extension : array();
                     <td>
                         <span class="ext-type bg-<?php echo $ext->type ?>"><?php echo $ext->type ?></span>
                     </td>
+                    <td class="item-folder"><?php echo $ext->folder ?></td>
                     <td class="item-element"><?php echo $ext->element ?></td>
                     <td>
                         <input 

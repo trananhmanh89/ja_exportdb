@@ -16,13 +16,52 @@ jQuery(document).ready($ => {
             return;
         }
 
-        const $form = $('.form-export');
-        const $task = $form.find('input[name=task]');
+        $el.attr('disabled', true);
 
-        $task.val('delete_extension');
-        $form.append(`<input type="hidden" name="extension_id" value="${extension_id}" />`);
-        $form.submit();
+        $.ajax({
+            method: 'post',
+            url: window.uri_current,
+            dataType: 'json',
+            data: {
+                task: 'delete_extension',
+                extension_id: extension_id,
+            }
+        })
+        .done(res => {
+            if (res.success) {
+                const $ext = $el.parents('.ext-item');
+                $ext.css('background-color', 'rgb(255 171 0 / 25%)')
+
+                setTimeout(() => {
+                    updateErrorList().then(() => {
+                        $ext.remove();
+                    })
+                }, 300);
+            } else {
+                alert('delete error');
+            }
+        })
+        .fail(error => {
+            alert('ajax delete error');
+        });
     })
+
+    function updateErrorList() {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                url: window.uri_current,
+            })
+            .done(html => {
+                const $error  = $(html).find('.error-list');
+                $('.error-list').html($error.html());
+                resolve();
+            })
+            .fail(error => {
+                alert('could not updat error list')
+                reject();
+            });
+        });
+    }
 
     function loading(state) {
         if (state) {
@@ -120,15 +159,30 @@ jQuery(document).ready($ => {
         $byTypeItems.each((idx, el) => {
             const $el = $(el);
             const $name = $el.find('.item-name');
+            const $folder = $el.find('.item-folder');
             const $element = $el.find('.item-element');
+
             const _name = $name.text().toLowerCase();
+            const _folder = $folder.text().toLowerCase();
             const _element = $element.text().toLowerCase();
 
-            if (!search || _name.indexOf(search) !== -1 || _element.indexOf(search) !== -1) {
+            if (!search 
+                || _name.indexOf(search) !== -1 
+                || _folder.indexOf(search) !== -1
+                || _element.indexOf(search) !== -1) {
+
                 $el.removeClass('hidden');
                 $name.unmark({
                     done() {
                         $name.mark(search, {
+                            separateWordSearch: false,
+                            diacritics: false,
+                        });
+                    }
+                })
+                $folder.unmark({
+                    done() {
+                        $folder.mark(search, {
                             separateWordSearch: false,
                             diacritics: false,
                         });
@@ -231,7 +285,7 @@ jQuery(document).ready($ => {
             loading(true);
             $task.val(taskName);
             $.ajax({
-                url: window.uri_root,
+                url: window.uri_current,
                 dataType: 'json',
                 method: 'post',
                 data: $form.serializeArray(),
@@ -265,7 +319,7 @@ jQuery(document).ready($ => {
 
         $select.select2();
         $.ajax({
-            url: window.uri_rooot,
+            url: window.uri_current,
             dataType: 'json',
             method: 'post',
             data: {
@@ -284,6 +338,7 @@ jQuery(document).ready($ => {
             }
         })
         .fail(error => {
+            console.log(error);
             alert('ajax error');
         });
 
@@ -300,7 +355,7 @@ jQuery(document).ready($ => {
 
             loading(true);
             $.ajax({
-                url: window.uri_rooot,
+                url: window.uri_current,
                 dataType: 'json',
                 method: 'post',
                 data: {
