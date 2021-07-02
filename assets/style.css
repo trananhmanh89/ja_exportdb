@@ -196,3 +196,11 @@ mark {
     padding: 0;
     background-color: #ffc107;
 }
+
+.badge-backend {
+    border: dashed 1px #ffc107;
+}
+
+.badge-frontend {
+    border: dashed 1px #007bff;
+}

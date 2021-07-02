@@ -739,7 +739,9 @@ class App
             }
 
             if (!$file || !file_exists($file)) {
-                $this->error[] = "Missing xml [{$ext->type}] [{$ext->element}] [{$ext->folder}] $file";
+                $relPath = str_replace($basePath, '', $file);
+                $client = $ext->client_id ? '<span class="badge badge-warning">Back End</span>' : '<span class="badge badge-primary">Front End</span>';
+                $this->error[] = "$client <b>missing xml [{$ext->type}] [{$ext->element}] [{$ext->folder}]</b> <br> <i>$relPath</i>";
             }
         }
 

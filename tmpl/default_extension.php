@@ -36,6 +36,7 @@ $qsExtensionsSelected = isset($qs->extension) ? $qs->extension : array();
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th></th>
                 <th>Type</th>
                 <th>Folder</th>
                 <th>Element</th>
@@ -49,6 +50,13 @@ $qsExtensionsSelected = isset($qs->extension) ? $qs->extension : array();
                 <tr class="ext-item item" data-type="<?php echo $ext->type ?>">
                     <td><?php echo $ext->extension_id ?></td>
                     <td class="ext-name item-name"><?php echo htmlspecialchars($ext->name) ?></td>
+                    <td>
+                        <?php if ($ext->client_id): ?>
+                            <span class="badge badge-backend">Back End</span>
+                        <?php else: ?>
+                            <span class="badge badge-frontend">Front End</span>
+                        <?php endif ?>
+                    </td>
                     <td>
                         <span class="ext-type bg-<?php echo $ext->type ?>"><?php echo $ext->type ?></span>
                     </td>
